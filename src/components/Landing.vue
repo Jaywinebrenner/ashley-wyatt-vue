@@ -1,7 +1,6 @@
 <template>
   <div class="landing">
     <h1 @click="$parent.homeOrLanding = 'Home'">Ashley Wyatt</h1>
-
   </div>
 </template>
 
@@ -29,7 +28,8 @@ export default {
 }
 .landing h1 {
   font-family: 'Cabin Sketch', cursive;
-
+  font-size: 5rem;
+  cursor: pointer;
 }
 
 .landing h1:hover {
