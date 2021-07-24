@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Landing  v-if="HomeOrLanding === 'Landing'" />
-    <Home v-if="HomeOrLanding === 'Home'" />
+    <Landing  v-if="homeOrLanding === 'Landing'" />
+    <Home v-if="homeOrLanding === 'Home'" />
 
 
   </div>
@@ -23,9 +23,7 @@ export default {
   },
   data() {
     return{
-        HomeOrLanding: "Landing",
-      
-
+        homeOrLanding: "Landing",
     }
   },
   methods: {
@@ -35,5 +33,19 @@ export default {
 </script>
 
 <style>
+
+body, html {
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+}
+
+    
 
 </style>
