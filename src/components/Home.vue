@@ -4,15 +4,16 @@
       <div class="side-bar">
         <h4 @click="$parent.homeOrLanding = 'Landing'"><strong>Ashley Wyatt</strong></h4>
         <p v-bind:class="{ active: isActive('Apparel') }" @click="setActive('Apparel')" >Apparel</p>
-        <p >Painting</p>
-        <p >Sculture</p>
+        <p v-bind:class="{ active: isActive('Painting') }" @click="setActive('Painting')" >Painting</p>
+        <p v-bind:class="{ active: isActive('Sculpture') }" @click="setActive('Sculpture')" >Sculpture</p>
         <p v-bind:class="{ active: isActive('About') }" @click="setActive('About')">About</p>
       </div>
 
       <div class="home-body">
         <Apparel v-if="page === 'Apparel'"/>
         <About v-if="page === 'About'"/>
-
+        <Sculpture v-if="page === 'Sculpture'"/>
+        <Painting v-if="page === 'Painting'"/>
       </div>
   </div>
 </template>
@@ -21,12 +22,16 @@
 
 import Apparel from './Apparel.vue'
 import About from './About.vue'
+import Painting from './Painting.vue'
+import Sculpture from './Sculpture.vue'
 
 export default {
   name: 'Home',
   components: {
     Apparel,
-    About 
+    About, 
+    Painting,
+    Sculpture
   },
   props: {
 
@@ -42,6 +47,7 @@ export default {
   methods: {
     isActive(page) {
       if(page === this.page){
+        console.log("page",page)
         return true
       }
       return false
@@ -82,6 +88,7 @@ export default {
 
 .side-bar p, h4 {
   font-family: 'Cabin Sketch', cursive;
+  cursor: pointer;
 
 }
 
